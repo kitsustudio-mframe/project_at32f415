@@ -11,9 +11,9 @@
 #include <stdio.h>
 
 //-----------------------------------------------------------------------------------------
-#include "lang/package-info.h"
-#include "at32f415/package-info.h"
-#include "cmsisrtos/package-info.h"
+#include "mframe.h"
+#include "chip.h"
+#include "rtos.h"
 //-----------------------------------------------------------------------------------------
 
 /* ****************************************************************************************
@@ -28,8 +28,8 @@
  * Extern
  */
 extern void lowlevel(void);
-extern void setup(lang::Thread*);
-extern void loop(lang::Thread*);
+extern void setup(mframe::lang::Thread*);
+extern void loop(mframe::lang::Thread*);
 
 /* ****************************************************************************************
  * Class
@@ -46,8 +46,8 @@ extern void loop(lang::Thread*);
 
 extern "C" int main(void){
   lowlevel();
-  lang::EntryPoint e = lang::EntryPoint(setup, loop);
-  lang::System::start(e, 1024, 1024);
+  mframe::lang::managerment::EntryPoint e = mframe::lang::managerment::EntryPoint(setup, loop);
+  mframe::lang::System::start(e, 1024, 1024);
 }
  
 /* ****************************************************************************************

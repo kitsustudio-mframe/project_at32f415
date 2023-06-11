@@ -88,7 +88,7 @@
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
-          <SelectedForBatchBuild>1</SelectedForBatchBuild>
+          <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
@@ -404,7 +404,7 @@
           <Files>
             <File>
               <FileName>RTX_Config.c</FileName>
-              <FileType>1</FileType>
+              <FileType>8</FileType>
               <FilePath>.\reference\RTX_Config.c</FilePath>
             </File>
             <File>
@@ -418,11 +418,6 @@
               <FilePath>.\reference\chip_interrupt.cpp</FilePath>
             </File>
             <File>
-              <FileName>chip_interrupt_priority.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\reference\chip_interrupt_priority.c</FilePath>
-            </File>
-            <File>
               <FileName>chip_startup.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\reference\chip_startup.s</FilePath>
@@ -433,29 +428,19 @@
           <GroupName>library</GroupName>
           <Files>
             <File>
-              <FileName>lang_cm3.lib</FileName>
+              <FileName>mframe_cm3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\lang\lang_cm3.lib</FilePath>
+              <FilePath>..\mframe\mframe_cm3.lib</FilePath>
             </File>
             <File>
-              <FileName>ctrl_cm3.lib</FileName>
+              <FileName>chip_at32f415.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\ctrl\ctrl_cm3.lib</FilePath>
+              <FilePath>..\chip_arterytek_at32f415\chip_at32f415.lib</FilePath>
             </File>
             <File>
-              <FileName>cmsisrtos_m3.lib</FileName>
+              <FileName>rtos_cmsisrtos_m3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\cmsisrtos\cmsisrtos_m3.lib</FilePath>
-            </File>
-            <File>
-              <FileName>at32f415.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\at32f415\at32f415.lib</FilePath>
-            </File>
-            <File>
-              <FileName>util_cm3.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\util\util_cm3.lib</FilePath>
+              <FilePath>..\rtos_cmsisrtos\rtos_cmsisrtos_m3.lib</FilePath>
             </File>
           </Files>
         </Group>

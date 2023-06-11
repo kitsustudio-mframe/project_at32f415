@@ -9,9 +9,8 @@
  * Include
  */
 
-//-----------------------------------------------------------------------------------------
-#include "at32f415/package-info.h"
-#include "at32f415/chip_arm.h"
+#define USING_CHIP_ARM
+#include "chip.h"
 
 //-----------------------------------------------------------------------------------------
 
@@ -24,13 +23,13 @@
 /* ****************************************************************************************
  * Using
  */  
-using at32f415::core::Core;
-using at32f415::core::CoreInterrupt;
-using at32f415::tmr::TMR1;
-using at32f415::tmr::TMR9;
-using at32f415::tmr::TMR10;
-using at32f415::tmr::TMR11;
-using at32f415::exint::EXINT0;
+using chip::core::Core;
+using chip::core::CoreInterrupt;
+using chip::tmr::TMR1;
+using chip::tmr::TMR9;
+using chip::tmr::TMR10;
+using chip::tmr::TMR11;
+using chip::exint::EXINT0;
 
 /* ****************************************************************************************
  * Macro
@@ -235,9 +234,7 @@ extern "C" void TMR1_TRG_HALL_TMR11_IRQHandler(void){
  * 
  */
 extern "C" void TMR2_GLOBAL_IRQHandler(void){
-  at32f415::gpio::GPIOB.scr |= 0x0000001;
   Core::interrupt.mHandle[CoreInterrupt::IRQ_TMR2]->interruptEvent();
-  at32f415::gpio::GPIOB.clr |= 0x0000001;
 }
 
 /**
@@ -382,16 +379,6 @@ extern "C" void OTGFS1_IRQHandler(void){
 extern "C" void OTGFS1_WKUP_IRQHandler(void){
   Core::interrupt.mHandle[CoreInterrupt::IRQ_OTGFS_WAKE]->interruptEvent();
 }
-
-/**
- * @brief 
- * 
- */
-extern "C" void SystemInit(void){
-  at32f415::Chip::systemInit();
-  return;
-}
-
 
 #pragma clang diagnostic pop
 /* *****************************************************************************************
