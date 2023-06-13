@@ -47,7 +47,7 @@ extern void loop(mframe::lang::Thread*);
 extern "C" int main(void){
   lowlevel();
   mframe::lang::managerment::EntryPoint e = mframe::lang::managerment::EntryPoint(setup, loop);
-  mframe::lang::System::start(e, 1024, 1024);
+  mframe::lang::System::start(e, 1024);
 }
  
 /* ****************************************************************************************

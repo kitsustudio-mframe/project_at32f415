@@ -50,6 +50,7 @@ void setup(Thread* _this){
   System::out() << "init\n";
   System::out() << "thread name: " << _this->getThreadName() << '\n';
   System::out() << "system clock: " << static_cast<int>(System::getCoreClock()) << '\n';
+  System::out() << "free memory : " << System::getAllocator()->getFree() << '\n';
   _this->delay(100);
   
 
